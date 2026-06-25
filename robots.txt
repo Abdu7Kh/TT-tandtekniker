@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# مسار خريطة الموقع
-Sitemap: https://dindomän.se/sitemap.xml
+Sitemap: https://tt-tandtekniker.se/sitemap.xml

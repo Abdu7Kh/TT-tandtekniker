@@ -1,532 +1,927 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- عنوان الصفحة -->
-  <title>Tt tandtekniker – Dental Laboratory</title>
+<title>Tt tandtekniker — Tandtekniskt laboratorium i Stockholm</title>
+<meta name="description" content="Tt tandtekniker är ett tandtekniskt laboratorium i Stockholm med tre generationers erfarenhet. Helkeram, zirkonia, implantatprotetik och avtagbar protetik — tillverkat i Sverige, MDR-certifierat.">
+<meta name="theme-color" content="#F2F1ED">
+<link rel="canonical" href="https://tt-tandtekniker.se/">
 
-  <!-- تحسين SEO: وسم الوصف -->
-  <meta name="description"
-    content="Tt tandtekniker – Professionellt tandtekniker-laboratorium i Uppsala. Vi erbjuder porslinskronor, implantat, fast & avtagbar protetik med CAD/CAM-teknik. Kontakta oss idag!">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tt tandtekniker — Där tandvård blir hantverk">
+<meta property="og:description" content="Tandtekniskt laboratorium i Stockholm. Tre generationers hantverk inom helkeram, implantat och protetik.">
+<meta property="og:image" content="https://tt-tandtekniker.se/assets/images/hero-arch.jpg">
+<meta property="og:locale" content="sv_SE">
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://tt-tandtekniker.se/">
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Tt tandtekniker",
+  "description": "Tandtekniskt laboratorium specialiserat på estetik: helkeram, zirkonia, implantatprotetik och avtagbar protetik.",
+  "image": "https://tt-tandtekniker.se/assets/images/hero-arch.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Krossgatan 25",
+    "addressLocality": "Vällingby",
+    "addressRegion": "Stockholm",
+    "postalCode": "16250",
+    "addressCountry": "SE"
+  },
+  "telephone": "+46739711401",
+  "email": "info@tt-tandtekniker.se",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00", "closes": "17:00"
+  }],
+  "url": "https://tt-tandtekniker.se"
+}
+</script>
 
-  <!-- Schema.org LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Tt tandtekniker",
-    "image": "https://tt-tandtekniker.se/assets/images/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Krossgatan 25",
-      "addressLocality": "Vällingby",
-      "postalCode": "16250",
-      "addressCountry": "SE"
-    },
-    "telephone": "+46 73 971 14 01",
-    "openingHours": [
-      "Mo–Fr 08:00–17:00"
-    ],
-    "url": "https://tt-tandtekniker.se"
-  }
-  </script>
+<link rel="icon" href="assets/images/logo-original.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- favicon -->
-  <link rel="icon" href="assets/images/logo.png" type="image/png">
+<style>
+/* ============================================================
+   Tt tandtekniker — "Atelier" design system
+   Light porcelain ground · soft Fraunces serif · petrol accent
+   ============================================================ */
+:root{
+  --porcelain:#F2F1ED;   /* page ground — cool-neutral bone */
+  --bone:#FBFAF7;        /* raised surfaces — brightest tooth white */
+  --ink:#1A1814;         /* primary text — warm near-black */
+  --graphite:#5E5B52;    /* secondary text — zirconia grey */
+  --enamel:#E5DDCC;      /* warm ivory — fills & dividers */
+  --enamel-2:#EFEADD;    /* paler ivory */
+  --petrol:#123F39;      /* accent — deep clinical teal */
+  --petrol-2:#1C5A52;    /* hover petrol */
+  --shadow-ink:#0E0D0A;  /* vitrine dark band */
+  --line:rgba(26,24,20,.14);
+  --line-soft:rgba(26,24,20,.08);
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  --shell:1280px;
+  --gut:clamp(20px,5vw,72px);
+  --sec:clamp(72px,11vw,150px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
 
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{
+  background:var(--porcelain);color:var(--ink);
+  font-family:var(--sans);font-weight:400;line-height:1.6;
+  font-size:17px;letter-spacing:.005em;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--petrol);color:var(--enamel-2)}
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+/* ---- layout primitives ---- */
+.shell{max-width:var(--shell);margin-inline:auto;padding-inline:var(--gut)}
+.section{padding-block:var(--sec);position:relative}
+.section--tight{padding-block:clamp(54px,8vw,96px)}
 
-  <!-- (اختياري) تعريف صنف visually-hidden إذا لم يكن موجودًا في CSS -->
-  <style>
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
-  </style>
+/* ---- type ---- */
+.kicker{
+  font-family:var(--mono);font-size:.69rem;font-weight:500;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--petrol);
+  display:inline-flex;align-items:center;gap:.7em;
+}
+.kicker::before{content:"";width:26px;height:1px;background:var(--petrol);opacity:.6}
+.display{
+  font-family:var(--serif);font-weight:400;line-height:1.02;
+  letter-spacing:-.018em;color:var(--ink);
+  font-optical-sizing:auto;
+}
+.h-sec{font-size:clamp(2.05rem,4.3vw,3.5rem)}
+.h-hero{font-size:clamp(2.9rem,7.6vw,6.3rem)}
+.lead{font-size:clamp(1.08rem,1.5vw,1.32rem);line-height:1.55;color:var(--graphite);font-weight:400}
+.eyebrow-row{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:2.6rem;max-width:44ch}
+em,.it{font-style:italic}
+.serif-accent{font-family:var(--serif);font-style:italic;font-weight:400}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;gap:.65em;
+  font-family:var(--sans);font-weight:600;font-size:.93rem;letter-spacing:.01em;
+  padding:.92em 1.5em;border-radius:999px;cursor:pointer;border:1px solid transparent;
+  transition:transform .4s var(--ease),background .3s,color .3s,border-color .3s;
+}
+.btn .arw{transition:transform .4s var(--ease)}
+.btn:hover .arw{transform:translateX(4px)}
+.btn--primary{background:var(--petrol);color:var(--enamel-2)}
+.btn--primary:hover{background:var(--petrol-2)}
+.btn--ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn--ghost:hover{border-color:var(--ink)}
+.btn--light{background:var(--bone);color:var(--ink);border-color:var(--line-soft)}
+.btn--light:hover{background:#fff}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--petrol);outline-offset:3px;border-radius:4px;
+}
+
+/* ============================================================ NAV */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  padding-block:1.05rem;
+  transition:padding .4s var(--ease),background .4s,border-color .4s,backdrop-filter .4s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  padding-block:.6rem;background:rgba(242,241,237,.82);
+  backdrop-filter:saturate(1.4) blur(14px);border-bottom-color:var(--line-soft);
+}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.brand{display:flex;align-items:center;gap:.78rem;color:var(--ink)}
+.brand__mark{width:34px;height:38px;flex:0 0 auto;color:var(--ink)}
+.brand__name{font-family:var(--serif);font-weight:500;font-size:1.18rem;letter-spacing:-.01em;line-height:1}
+.brand__name b{font-weight:500}
+.brand__sub{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--graphite);margin-top:.32em}
+.nav__links{display:flex;align-items:center;gap:2.1rem}
+.nav__links a{font-size:.92rem;font-weight:500;color:var(--ink);position:relative;padding-block:.3em}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--petrol);transition:width .35s var(--ease)}
+.nav__links a:hover::after{width:100%}
+.nav__cta{display:flex;align-items:center;gap:1.4rem}
+.nav__phone{font-family:var(--mono);font-size:.84rem;color:var(--ink);white-space:nowrap}
+.nav__phone:hover{color:var(--petrol)}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;width:20px;height:1.5px;background:var(--ink);transition:.32s var(--ease)}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:26px}
+body.menu-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* mobile drawer */
+.drawer{position:fixed;inset:0;z-index:55;background:var(--porcelain);
+  padding:7rem var(--gut) 3rem;display:flex;flex-direction:column;gap:.4rem;
+  transform:translateY(-100%);transition:transform .55s var(--ease);visibility:hidden}
+body.menu-open .drawer{transform:translateY(0);visibility:visible}
+.drawer a{font-family:var(--serif);font-size:2rem;font-weight:400;padding:.5rem 0;border-bottom:1px solid var(--line-soft);color:var(--ink)}
+.drawer .btn{margin-top:1.6rem;align-self:flex-start}
+
+/* ============================================================ HERO */
+.hero{padding-top:clamp(120px,17vh,200px);padding-bottom:clamp(40px,6vw,80px)}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:end}
+.hero__kicker{margin-bottom:1.8rem}
+.hero__title{margin-bottom:1.7rem}
+.hero__title .ln{display:block;overflow:hidden}
+.hero__title .ln > span{display:block;will-change:transform}
+.hero__lead{max-width:38ch;margin-bottom:2.3rem}
+.hero__actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+.hero__figure{position:relative}
+.hero__frame{position:relative;border-radius:6px;overflow:hidden;background:var(--enamel);
+  box-shadow:0 40px 80px -50px rgba(14,13,10,.55),0 2px 10px -4px rgba(14,13,10,.2)}
+.hero__frame::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.18);
+  border-radius:6px;mix-blend-mode:overlay;pointer-events:none}
+.hero__frame img{width:100%;aspect-ratio:4/3.05;object-fit:cover;transform:scale(1.06);will-change:transform}
+.hero__cap{display:flex;justify-content:space-between;align-items:baseline;margin-top:.95rem;gap:1rem}
+.hero__cap .mono{font-family:var(--mono);font-size:.72rem;color:var(--graphite);letter-spacing:.04em}
+.hero__cap .idx{font-family:var(--mono);font-size:.72rem;color:var(--petrol)}
+
+/* meta bar */
+.metabar{margin-top:clamp(38px,5vw,64px);border-top:1px solid var(--line);padding-top:1.5rem}
+.metabar ul{list-style:none;display:flex;flex-wrap:wrap;gap:clamp(18px,3.4vw,52px)}
+.metabar li{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink);
+  display:flex;align-items:center;gap:.7em}
+.metabar li span{width:5px;height:5px;border-radius:50%;background:var(--petrol)}
+
+/* ============================================================ SHADE SIGNATURE */
+.shade{background:var(--bone);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.shade__head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.shade__head p{max-width:46ch}
+.shade__strip{display:flex;gap:clamp(8px,1.4vw,18px);align-items:flex-end;
+  overflow-x:auto;padding-bottom:.6rem;scrollbar-width:none}
+.shade__strip::-webkit-scrollbar{display:none}
+.tab{flex:1 1 0;min-width:64px;cursor:default;text-align:center}
+.tab__chip{height:clamp(118px,15vw,188px);border-radius:5px 5px 3px 3px;position:relative;
+  box-shadow:inset 0 -10px 22px -12px rgba(60,40,10,.5),inset 0 1px 0 rgba(255,255,255,.6),0 8px 18px -14px rgba(14,13,10,.6);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);transform-origin:bottom}
+.tab__chip::before{content:"";position:absolute;inset:0 0 38% 0;border-radius:5px 5px 0 0;
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0))}
+.tab:hover .tab__chip{transform:translateY(-10px) scaleY(1.03);
+  box-shadow:inset 0 -10px 22px -12px rgba(60,40,10,.5),inset 0 1px 0 rgba(255,255,255,.7),0 22px 34px -20px rgba(14,13,10,.65)}
+.tab__label{font-family:var(--mono);font-size:.74rem;font-weight:500;color:var(--graphite);margin-top:.8rem;letter-spacing:.05em}
+.tab.is-on .tab__label{color:var(--petrol)}
+
+/* ============================================================ SERVICES */
+.svc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(34px,4vw,52px)}
+.card{background:var(--bone);border:1px solid var(--line-soft);border-radius:6px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s}
+.card:hover{transform:translateY(-7px);box-shadow:0 36px 60px -44px rgba(14,13,10,.5);border-color:var(--line)}
+.card__media{aspect-ratio:4/3.4;overflow:hidden;background:var(--enamel)}
+.card__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.card:hover .card__media img{transform:scale(1.05)}
+.card__body{padding:1.7rem 1.6rem 1.9rem;display:flex;flex-direction:column;flex:1}
+.card__no{font-family:var(--mono);font-size:.72rem;color:var(--petrol);letter-spacing:.1em;margin-bottom:1rem}
+.card__title{font-family:var(--serif);font-size:1.5rem;font-weight:400;letter-spacing:-.01em;margin-bottom:.6rem}
+.card__sv{font-family:var(--mono);font-size:.7rem;color:var(--graphite);text-transform:uppercase;letter-spacing:.16em;margin-bottom:1.1rem}
+.card__txt{color:var(--graphite);font-size:.97rem;line-height:1.62}
+.card__tags{margin-top:auto;padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:.45rem}
+.tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--ink);
+  border:1px solid var(--line);border-radius:999px;padding:.34em .85em}
+
+/* ============================================================ PROCESS */
+.proc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(34px,4vw,52px);
+  border-top:1px solid var(--line)}
+.step{padding:2.1rem 1.8rem 2.3rem;border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  position:relative;transition:background .4s}
+.step:hover{background:var(--bone)}
+.step__no{font-family:var(--mono);font-size:.82rem;color:var(--petrol);letter-spacing:.1em;margin-bottom:1.4rem}
+.step__t{font-family:var(--serif);font-size:1.32rem;font-weight:400;margin-bottom:.6rem}
+.step__d{color:var(--graphite);font-size:.95rem;line-height:1.6}
+
+/* ============================================================ MATERIAL split */
+.mat{background:var(--shadow-ink);color:var(--enamel-2)}
+.mat .kicker{color:#9FC4BC}.mat .kicker::before{background:#9FC4BC}
+.mat__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.mat .display{color:var(--bone)}
+.mat__txt{color:#C9C5BB;max-width:42ch;margin:1.8rem 0 2rem}
+.mat__chips{display:flex;flex-wrap:wrap;gap:.55rem}
+.mat__chips .tag{color:var(--enamel-2);border-color:rgba(233,228,219,.24)}
+.mat__media{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 50px 90px -50px #000}
+.mat__media video,.mat__media img{width:100%;aspect-ratio:4/4.5;object-fit:cover}
+.mat__media figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;color:var(--enamel-2);
+  background:linear-gradient(0deg,rgba(8,8,6,.8),transparent)}
+
+/* ============================================================ GALLERY / VITRINE */
+.vit__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px);margin-top:clamp(34px,4vw,52px)}
+.vit__item{position:relative;border-radius:5px;overflow:hidden;background:var(--enamel);
+  aspect-ratio:4/3.2;box-shadow:0 1px 0 var(--line-soft)}
+.vit__item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .6s}
+.vit__item:hover img{transform:scale(1.06)}
+.vit__cap{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1.1rem .95rem;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:#fff;
+  background:linear-gradient(0deg,rgba(10,9,7,.82),transparent);
+  opacity:0;transform:translateY(8px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.vit__item:hover .vit__cap{opacity:1;transform:translateY(0)}
+.vit__item.is-hidden{display:none}
+.vit__more{display:flex;justify-content:center;gap:1rem;margin-top:2.6rem;flex-wrap:wrap}
+
+/* ============================================================ HERITAGE */
+.her__grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(30px,5vw,80px);align-items:center}
+.her__media{border-radius:6px;overflow:hidden;background:var(--enamel);
+  box-shadow:0 40px 80px -52px rgba(14,13,10,.5)}
+.her__media img{width:100%;aspect-ratio:4/4.4;object-fit:cover}
+.her__txt p{color:var(--graphite);margin-bottom:1.15rem;max-width:52ch}
+.pull{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:400;font-style:italic;
+  line-height:1.3;color:var(--ink);border-left:2px solid var(--petrol);padding-left:1.4rem;margin:2rem 0 0}
+
+/* ============================================================ REVIEWS */
+.rev__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.4vw,40px);margin-top:clamp(34px,4vw,52px)}
+.rev{padding:2rem 2rem 2.1rem;background:var(--bone);border:1px solid var(--line-soft);border-radius:6px}
+.rev__q{font-family:var(--serif);font-size:1.18rem;line-height:1.5;font-weight:400;color:var(--ink);margin-bottom:1.5rem}
+.rev__by{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.rev__name{font-weight:600;font-size:.92rem}
+.rev__role{font-family:var(--mono);font-size:.66rem;color:var(--graphite);text-transform:uppercase;letter-spacing:.12em}
+.rev__star{color:var(--petrol);font-size:.8rem;letter-spacing:.15em}
+
+/* ============================================================ CERTIFICATION */
+.cert__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(34px,4vw,52px);border-top:1px solid var(--line)}
+.cert{padding:2rem 1.7rem 2.2rem;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.cert__code{font-family:var(--mono);font-size:.78rem;color:var(--petrol);letter-spacing:.08em;margin-bottom:1rem}
+.cert__t{font-family:var(--serif);font-size:1.22rem;font-weight:400;margin-bottom:.55rem}
+.cert__d{color:var(--graphite);font-size:.93rem;line-height:1.6}
+
+/* ============================================================ CONTACT */
+.con__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(34px,5vw,80px)}
+.con__rows{margin-top:2.4rem;display:flex;flex-direction:column}
+.con__row{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1.15rem 0;border-top:1px solid var(--line);align-items:baseline}
+.con__row:last-child{border-bottom:1px solid var(--line)}
+.con__k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite)}
+.con__v{font-size:1rem;color:var(--ink)}
+.con__v a:hover{color:var(--petrol)}
+.con__v .mono{font-family:var(--mono);font-size:.96rem}
+.con__extra{display:flex;gap:1.4rem;margin-top:1.8rem;flex-wrap:wrap}
+.chip-link{display:inline-flex;align-items:center;gap:.55em;font-size:.9rem;font-weight:500;
+  border:1px solid var(--line);border-radius:999px;padding:.6em 1.1em;transition:border-color .3s,color .3s}
+.chip-link:hover{border-color:var(--ink);color:var(--petrol)}
+
+.form{background:var(--bone);border:1px solid var(--line-soft);border-radius:8px;padding:clamp(22px,3vw,38px)}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.field{display:flex;flex-direction:column;gap:.5rem}
+.field label{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite)}
+.field input,.field textarea{
+  font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--porcelain);
+  border:1px solid var(--line);border-radius:6px;padding:.85em .95em;transition:border-color .3s,background .3s}
+.field input:focus,.field textarea:focus{border-color:var(--petrol);background:#fff}
+.field textarea{resize:vertical;min-height:128px}
+.form__foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.4rem;flex-wrap:wrap}
+.form__note{font-family:var(--mono);font-size:.68rem;color:var(--graphite);max-width:30ch;line-height:1.5}
+.form__ok{font-family:var(--mono);font-size:.78rem;color:var(--petrol);display:none}
+.form.sent .form__ok{display:block}
+
+/* map */
+.map{margin-top:clamp(54px,7vw,90px)}
+.map iframe{width:100%;height:clamp(320px,42vw,460px);border:0;filter:grayscale(.35) contrast(.96);border-radius:8px}
+
+/* ============================================================ FOOTER */
+.foot{background:var(--shadow-ink);color:var(--enamel-2);padding-block:clamp(56px,7vw,88px)}
+.foot__top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(28px,4vw,60px);padding-bottom:3rem;border-bottom:1px solid rgba(233,228,219,.16)}
+.foot__brand .brand__mark{color:var(--enamel-2)}
+.foot__brand .brand__name{color:var(--bone)}
+.foot__brand p{color:#A7A399;font-size:.93rem;line-height:1.6;margin-top:1.3rem;max-width:34ch}
+.foot__col h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#8E8A80;margin-bottom:1.2rem}
+.foot__col a,.foot__col p{display:block;color:#C9C5BB;font-size:.95rem;padding:.32rem 0}
+.foot__col a:hover{color:#fff}
+.foot__bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1.8rem;flex-wrap:wrap}
+.foot__bottom p,.foot__bottom span{font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:#8E8A80}
+
+/* ============================================================ REVEAL motion */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal][data-d="1"]{transition-delay:.08s}
+[data-reveal][data-d="2"]{transition-delay:.16s}
+[data-reveal][data-d="3"]{transition-delay:.24s}
+[data-reveal][data-d="4"]{transition-delay:.32s}
+[data-reveal][data-d="5"]{transition-delay:.40s}
+
+/* hero load animation */
+.hero__title .ln > span{transform:translateY(110%);animation:rise 1.05s var(--ease) forwards}
+.hero__title .ln:nth-child(2) > span{animation-delay:.12s}
+.hero__title .ln:nth-child(3) > span{animation-delay:.22s}
+@keyframes rise{to{transform:translateY(0)}}
+.hero__kicker,.hero__lead,.hero__actions{opacity:0;animation:fadeUp .9s var(--ease) forwards}
+.hero__kicker{animation-delay:.05s}.hero__lead{animation-delay:.42s}.hero__actions{animation-delay:.55s}
+.hero__frame img{animation:dolly 1.6s var(--ease) forwards;animation-delay:.2s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes dolly{to{transform:scale(1)}}
+.hero__figure{opacity:0;animation:fadeUp 1.1s var(--ease) .3s forwards}
+
+/* ============================================================ RESPONSIVE */
+@media (max-width:1080px){
+  .hero__grid{grid-template-columns:1fr;gap:48px;align-items:start}
+  .hero__figure{max-width:560px}
+  .svc__grid{grid-template-columns:1fr 1fr}
+  .proc__grid{grid-template-columns:1fr 1fr}
+  .mat__grid,.her__grid,.con__grid{grid-template-columns:1fr;gap:42px}
+  .her__media{max-width:480px;order:-1}
+  .cert__grid{grid-template-columns:1fr 1fr}
+  .foot__top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav__links,.nav__phone,.nav__cta .btn--primary{display:none}
+  .burger{display:block}
+  .nav__cta{gap:0}
+  .shade__head{grid-template-columns:1fr;gap:18px}
+  .svc__grid,.proc__grid,.vit__grid,.rev__grid,.cert__grid{grid-template-columns:1fr}
+  .step,.cert{border-right:none}
+  .vit__grid{grid-template-columns:1fr 1fr;gap:10px}
+  .form__row{grid-template-columns:1fr}
+  .con__row{grid-template-columns:1fr;gap:.35rem}
+  .foot__top{grid-template-columns:1fr}
+  .vit__cap{opacity:1;transform:none;font-size:.6rem;padding:1rem .7rem .7rem}
+}
+@media (max-width:420px){
+  .vit__grid{grid-template-columns:1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .hero__title .ln > span{transform:none}
+  .hero__frame img{transform:scale(1)}
+  .hero__kicker,.hero__lead,.hero__actions,.hero__figure{opacity:1}
+}
+</style>
 </head>
 
 <body>
-<h1 class="visually-hidden">Tt tandtekniker – Dental Laboratory i Uppsala</h1>
 
-  <!-- ====== NAVBAR ====== -->
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow-sm py-3 animated-gradient-bg">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#hero-video">
-        <img src="assets/images/logo.png" loading="lazy" alt="Tt tandtekniker" height="50" class="logo-animated glow-logo">
-        <div class="ms-2 lab-name">
-          <span class="main-title">Tt tandtekniker</span><br>
-          <span class="sub-title">Dental Laboratory</span>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon toggler-animated"></span>
+<!-- ====================== NAV ====================== -->
+<header class="nav" id="nav">
+  <div class="shell nav__in">
+    <a class="brand" href="#top" aria-label="Tt tandtekniker — startsida">
+      <svg class="brand__mark" viewBox="0 0 64 72" fill="none" aria-hidden="true">
+        <path d="M32 6C20 6 10 10 9 22C8.4 30 9.5 38 12 48C13.4 54 15 66 19 66C23 66 24 54 26.5 47C28 43 30 42.5 32 42.5C34 42.5 36 43 37.5 47C40 54 41 66 45 66C49 66 50.6 54 52 48C54.5 38 55.6 30 55 22C54 10 44 6 32 6Z" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M18 17.5 H46" stroke="currentColor" stroke-width="4"/>
+        <path d="M18 14.6 V20.4 M46 14.6 V20.4" stroke="currentColor" stroke-width="2"/>
+        <path d="M32 19 V40" stroke="currentColor" stroke-width="4"/>
+        <path d="M27.5 40 H36.5" stroke="currentColor" stroke-width="2"/>
+        <path d="M51 11.5 L39 28" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="51" cy="11.5" r="2" fill="currentColor"/>
+      </svg>
+      <span class="brand__name"><b>Tt</b> tandtekniker<span class="brand__sub">Dentallaboratorium · Stockholm</span></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Huvudmeny">
+      <a href="#tjanster">Tjänster</a>
+      <a href="#hantverk">Hantverket</a>
+      <a href="#vitrin">Galleri</a>
+      <a href="#arv">Om oss</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a class="nav__phone" href="tel:+46739711401">+46&nbsp;73&nbsp;971&nbsp;14&nbsp;01</a>
+      <a class="btn btn--primary" href="#kontakt">Begär offert <span class="arw">→</span></a>
+      <button class="burger" id="burger" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link navlink-animated" href="#hero-video">Startsida</a></li>
-          <li class="nav-item"><a class="nav-link navlink-animated" href="#about">Om oss</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle navlink-animated" href="#cards-section" data-bs-toggle="dropdown">Tjänster</a>
-            <ul class="dropdown-menu dropdown-animated">
-              <li><a class="dropdown-item" href="#cards-section">Implantat</a></li>
-              <li><a class="dropdown-item" href="#cards-section">Fast protetik</a></li>
-              <li><a class="dropdown-item" href="#cards-section">Avtagbar protetik</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link navlink-animated" href="#gallery">Galleri</a></li>
-          <li class="nav-item"><a class="nav-link navlink-animated" href="#contact">Kontakt</a></li>
-          <li class="nav-item"><a class="nav-link navlink-animated" href="#reviews">Reviews</a></li>
-        </ul>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer">
+  <a href="#tjanster">Tjänster</a>
+  <a href="#hantverk">Hantverket</a>
+  <a href="#vitrin">Galleri</a>
+  <a href="#arv">Om oss</a>
+  <a href="#kontakt">Kontakt</a>
+  <a class="btn btn--primary" href="#kontakt">Begär offert <span class="arw">→</span></a>
+</div>
+
+<span id="top"></span>
+
+<!-- ====================== HERO ====================== -->
+<main>
+<section class="hero shell" aria-label="Introduktion">
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <p class="kicker hero__kicker">Tredje generationens tandtekniker · Stockholm</p>
+      <h1 class="display h-hero hero__title">
+        <span class="ln"><span>Där tandvård</span></span>
+        <span class="ln"><span>blir <em>hantverk.</em></span></span>
+      </h1>
+      <p class="lead hero__lead">
+        Ett tandtekniskt laboratorium specialiserat på estetik. I tre generationer har vi
+        format kronor, broar och proteser som hjälper tandläkare att återskapa det svenska
+        leendet — med precision in i minsta nyans.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#vitrin">Se vårt arbete <span class="arw">→</span></a>
+        <a class="btn btn--ghost" href="#tjanster">Våra tjänster</a>
       </div>
     </div>
-  </nav>
 
-  <!-- ====== HERO VIDEO ====== -->
-  <section id="hero-video" class="bg-black">
-    <div class="container-fluid p-0">
-      <div class="ratio ratio-16x9">
-        <video autoplay loop muted playsinline class="hero-video-el">
-          <source src="assets/images/teeth 1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <figure class="hero__figure">
+      <div class="hero__frame">
+        <img src="assets/images/hero-arch.jpg" alt="Helkäke i helkeram med skiktad porslin på modell" loading="eager">
       </div>
-    </div>
-  </section>
+      <figcaption class="hero__cap">
+        <span class="mono">Helkeram · skiktad porslin · nyans A2</span>
+        <span class="idx">001</span>
+      </figcaption>
+    </figure>
+  </div>
 
-  <!-- ====== CARDS SECTION ====== -->
-  <section id="cards-section" class="cards-section py-5 bg-dark" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-    <div class="container">
-      <h2 class="section-heading text-center mb-4">Våra tjänster: Implantat, Avtagbar protetik, Fast protetik</h2>
-      <div class="cards-wrapper justify-content-center">
-        <div class="card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
-          <img src="assets/images/WhatsApp Image 2025-05-24 at 11.37.15_7b3d5e10.jpg" alt="Implantat" loading="lazy">
-          <button class="card-btn">IMPLANTAT</button>
-        </div>
-        <div class="card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
-          <img src="assets/images/fixed-bg2.jpg" alt="Avtagbar protetik" loading="lazy">
-          <button class="card-btn">AVTAGBAR PROTETIK</button>
-        </div>
-        <div class="card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="500">
-          <img src="assets/images/WhatsApp Image 2025-05-24 at 11.34.31_8b4704cd.jpg" alt="Fast protetik" loading="lazy">
-          <button class="card-btn">FAST PROTETIK</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== EXPERIENCE SECTION ====== -->
-  <section class="experience-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-    <div class="experience-bg">
-      <div class="overlay"></div>
-      <div class="container text-white py-5">
-        <h2 class="experience-title">Mer än 25 års erfarenhet inom framtagning av tandestetik.</h2>
-        <ul class="experience-list list-unstyled mb-4">
-          <li><span class="check-icon">✔</span> 3:E GENERATIONS ERFARENHET</li>
-          <li><span class="check-icon">✔</span> KVALITET</li>
-          <li><span class="check-icon">✔</span> ESTETIK</li>
-          <li><span class="check-icon">✔</span> SÄKER & SNABB LEVERANS</li>
-        </ul>
-        <p class="experience-text mb-4">
-          Detta är vad Tt tandtekniker erbjuder tandläkare för att skapa rätt förutsättningar till lyckade
-          behandlingar i tandkliniken. Vi värdesätter relationen mellan tandkliniken och tandlaboratoriet
-          för att uppnå ett väldigt effektivt samarbete.
-        </p>
-        <a href="#contact" class="btn btn-experience fixed-contact-btn">
-          KONTAKTA OSS <span class="arrow-pulse">➔</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-<!-- ====== COMPETENCE SECTION ====== -->
-<section id="competence" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-  <div class="container">
-    <h2 class="experience-title mb-4">Erfarenhet och Kompetens</h2>
-    <div class="row align-items-center">
-      
-      <!-- النص -->
-      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="800">
-        <p>
-          Vi är ett modernt tandtekniskt laboratorium i Stockholm. Företagets grundare har varit involverade
-          i tandteknik från ung ålder, familjens senaste 3 generationer är tandtekniker. Den långa erfarenheten
-          optimerar utförandet av produktionen som täcker alla tandklinikens behov.
-        </p>
-        <p class="fst-italic">Vi är certifierade och följer alla nedanstående föreskrifter:</p>
-        <ul class="list-unstyled mt-3">
-          <li class="mb-3"><span class="check-icon">✔</span> Godkänd kvalitetsäkring enligt MDR (EU) 2017/745.</li>
-          <li class="mb-3"><span class="check-icon">✔</span> Registrering hos Läkemedelsverket.</li>
-        </ul>
-      </div>
-
-      <!-- السلايدر -->
-      <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="800">
-        <div id="imageCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
-          <div class="carousel-inner rounded shadow-sm">
-            <div class="carousel-item active">
-              <img src="assets/images/WhatsApp Image 2025-05-24 at 11.35.37_8b9b0315.jpg" class="d-block w-100" alt="Image 1">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/WhatsApp Image 2025-05-24 at 11.35.37_9e9bad64.jpg" class="d-block w-100" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/WhatsApp Image 2025-05-24 at 11.35.37_ede85c56.jpg" class="d-block w-100" alt="Image 3">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/WhatsApp Image 2025-05-31 at 12.57.56_9f97ba1b.jpg" class="d-block w-100" alt="Image 4">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/WhatsApp Image 2025-05-31 at 12.57.56_48cf33df.jpg" class="d-block w-100" alt="Image 5">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/WhatsApp Image 2025-05-31 at 12.57.56_87daa257.jpg" class="d-block w-100" alt="Image 6">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/WhatsApp Image 2025-05-31 at 12.57.56_856c05f7.jpg" class="d-block w-100" alt="Image 7">
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  <div class="metabar" data-reveal data-d="1">
+    <ul>
+      <li><span></span>25 års erfarenhet</li>
+      <li><span></span>MDR&nbsp;(EU)&nbsp;2017/745</li>
+      <li><span></span>Tillverkat i Sverige</li>
+      <li><span></span>Eget fräscentrum</li>
+    </ul>
   </div>
 </section>
 
-
-  <!-- ====== VISION SECTION ====== -->
-  <section id="vision" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="800">
-          <h3 class="section-heading">Vår Vision</h3>
-          <p class="vision-text">
-            Vår vision är att identifiera möjligheter och lösningar för den mest optimala tand estetik
-            för att skapa ett underbart leende hos alla patienter.
-          </p>
-          <p class="vision-text">
-            Tt tandtekniker framställer högkvalitativa produkter och tjänster till förmånliga priser. Företaget är specialiserade på kronor, broar , alla keramiska restaureringar, implantat, och partiella proteser. Tandteknikerna har hjälpt tusentals tandläkare att återställa munhälsan och leenden för sina patienter!
-          </p>
-          <p class="vision-text">
-            Genom produktionen täcker vi alla tandklinikers behov, direkt från laboratoriet med trygg säkerhetsleverans.
-          </p>
-        </div>
-        <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="800">
-          <img src="assets/images/WhatsApp Image 2025-05-31 at 13.05.24_031e861a.jpg" alt="Vision" class="img-fluid rounded shadow-sm" loading="lazy">
-        </div>
+<!-- ====================== SHADE SIGNATURE ====================== -->
+<section class="shade section--tight">
+  <div class="shell">
+    <div class="shade__head">
+      <div>
+        <p class="kicker" data-reveal>Nyansmatchning</p>
+        <h2 class="display h-sec" data-reveal data-d="1" style="margin-top:1.1rem">
+          Vi möter varje nyans<br>i det naturliga leendet.
+        </h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ====== HIGHLIGHT SECTION ====== -->
-  <section id="highlight" class="highlight-section position-relative text-center text-white py-5" data-aos="fade-down" data-aos-duration="800">
-    <div class="highlight-watermark">Tt tandtekniker</div>
-    <div class="container position-relative">
-      <p class="lead mb-0">
-        Ni som tandläkare ska ha i åtanke att vi är ett tandlaboratorium som kommer
-        ställa upp med 100% åtagande utan ifrågasättning i alla aspekter!
+      <p class="lead" data-reveal data-d="2">
+        Varje restauration färgsätts mot patientens egen tandfärg enligt VITA-skalan.
+        Porslinet skiktas lager för lager så att ljuset bryts som i levande emalj.
       </p>
     </div>
-  </section>
 
-  <!-- ====== INFO SECTION ====== -->
-  <section id="info" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="800">
-          <p>
-            Laboratoriumet är ett modernt och välutrustat laboratorium med egen fräs-centrum. Alla produkter är
-            producerade i Sverige av högsta kvalitet och vi kvalitetssäkrar all vår produktion före leverans
-            till tandläkaren.
-          </p>
-          <p>
-            (CE) – Enligt europaparlamentets och rådets förordning MDR (EU) 2017/745 om medicintekniska produkter.
-          </p>
-        </div>
-        <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="800">
-          <img src="assets/images/lab-interior-blurred.jpg" alt="Ceramic Crowns Closeup" class="img-fluid rounded shadow-sm" loading="lazy">
-        </div>
-      </div>
+    <div class="shade__strip" id="shadeStrip" data-reveal data-d="2" role="img" aria-label="Tandfärgsskala från ljus B1 till varm A4">
+      <!-- tabs injected by JS -->
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== OM OSS SECTION ====== -->
-<section id="about" class="py-5 bg-light text-dark" data-aos="fade-up" data-aos-duration="800">
-  <div class="container">
-    <h2 class="section-heading mb-4">Om Oss</h2>
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-duration="800">
-        <ul class="about-list list-unstyled mb-4">
-          <li><span class="check-icon">✔</span> 3:E GENERATIONS ERFARENHET</li>
-          <li><span class="check-icon">✔</span> KVALITET</li>
-          <li><span class="check-icon">✔</span> ESTETIK</li>
-          <li><span class="check-icon">✔</span> SÄKER & SNABB LEVERANS</li>
-        </ul>
-        <p data-aos="fade-up" data-aos-duration="800">
-          Tt tandtekniker Dental Lab är tekniskt specialiserat tandlaboratorium med inriktning på estetik.
-        </p>
-        <p data-aos="fade-up" data-aos-duration="800">
-          Vår kompetens är grundad på 25 års erfarenhet inom tillverkning av tandestetik. Allt för att återskapa svenska befolkningens leende.
-        </p>
-        <p data-aos="fade-up" data-aos-duration="800">
-          Slutresultat sätter vi i centrum, vilket innebär att vi alltid levererar protetik med högsta kvalitet och precision. Patientens önskemål är vårt fokus för att alltid kunna prestera personlig service på högsta nivå.
-        </p>
-        <a href="#gallery" class="btn btn-om mt-3" data-aos="fade-up" data-aos-duration="800">Vårt arbete</a>
-      </div>
-      <div class="col-lg-6 about-images" data-aos="fade-left" data-aos-duration="800">
-        <div class="about-image-wrapper mx-auto">
-          <img
-            id="rotatingImage"
-            src="assets/images/technician-hands-bw.jpg"
-            class="img-fluid img2 rounded shadow-sm"
-            alt="Bild roterande"
-            loading="lazy"
-          >
+<!-- ====================== SERVICES ====================== -->
+<section class="section" id="tjanster">
+  <div class="shell">
+    <div class="eyebrow-row">
+      <p class="kicker" data-reveal>Tjänster</p>
+      <h2 class="display h-sec" data-reveal data-d="1">Tre discipliner.<br>En standard.</h2>
+      <p class="lead" data-reveal data-d="2" style="max-width:50ch">
+        Vi täcker tandklinikens hela behov av tandteknik — från enskilda kronor
+        till implantatstödda helkäksrekonstruktioner.
+      </p>
+    </div>
+
+    <div class="svc__grid">
+      <article class="card" data-reveal data-d="1">
+        <div class="card__media"><img src="assets/images/work-04.jpg" alt="Implantatstödd bro i titan" loading="lazy"></div>
+        <div class="card__body">
+          <p class="card__no">01 — Implantat</p>
+          <h3 class="card__title">Implantatprotetik</h3>
+          <p class="card__sv">Skruvretinerat · digitalt planerat</p>
+          <p class="card__txt">Individuella distanser, skruvretinerade broar och implantatstödda
+            helkäkslösningar — planerade digitalt och frästa i titan och zirkonia för exakt passform.</p>
+          <div class="card__tags"><span class="tag">Titan</span><span class="tag">Zirkonia</span><span class="tag">Helkäke</span></div>
         </div>
+      </article>
+
+      <article class="card" data-reveal data-d="2">
+        <div class="card__media"><img src="assets/images/work-01.jpg" alt="Helkäke i helkeram och zirkonia" loading="lazy"></div>
+        <div class="card__body">
+          <p class="card__no">02 — Fast protetik</p>
+          <h3 class="card__title">Helkeram &amp; zirkonia</h3>
+          <p class="card__sv">Kronor · broar · fasader</p>
+          <p class="card__txt">Kronor, broar och fasader i fältspatsporslin och zirkonia.
+            Naturtrogen translucens och en passform som sitter redan första gången.</p>
+          <div class="card__tags"><span class="tag">Fältspat</span><span class="tag">Zirkonia</span><span class="tag">Fasad</span></div>
+        </div>
+      </article>
+
+      <article class="card" data-reveal data-d="3">
+        <div class="card__media"><img src="assets/images/work-05.jpg" alt="Helprotes för över- och underkäke" loading="lazy"></div>
+        <div class="card__body">
+          <p class="card__no">03 — Avtagbar protetik</p>
+          <h3 class="card__title">Proteser &amp; skelett</h3>
+          <p class="card__sv">Hel- &amp; delproteser · gjutet CoCr</p>
+          <p class="card__txt">Hel- och delproteser samt gjutna metallskelett i CoCr — uppbyggda
+            för komfort, funktion och ett resultat som ser levande ut.</p>
+          <div class="card__tags"><span class="tag">CoCr-skelett</span><span class="tag">Helprotes</span><span class="tag">Delprotes</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROCESS ====================== -->
+<section class="section" id="hantverk" style="padding-top:0">
+  <div class="shell">
+    <div class="eyebrow-row">
+      <p class="kicker" data-reveal>Från avtryck till leverans</p>
+      <h2 class="display h-sec" data-reveal data-d="1">Hantverket bakom<br>varje enhet.</h2>
+    </div>
+
+    <div class="proc__grid">
+      <div class="step" data-reveal data-d="1">
+        <p class="step__no">01</p><h3 class="step__t">Avtryck &amp; scanning</h3>
+        <p class="step__d">Digitala eller analoga avtryck scannas och kontrolleras innan arbetet påbörjas.</p>
+      </div>
+      <div class="step" data-reveal data-d="2">
+        <p class="step__no">02</p><h3 class="step__t">Digital design</h3>
+        <p class="step__d">Restaurationen konstrueras i CAD med marginaler och kontakter efter ordinationen.</p>
+      </div>
+      <div class="step" data-reveal data-d="3">
+        <p class="step__no">03</p><h3 class="step__t">Fräsning</h3>
+        <p class="step__d">Enheten fräses i vårt eget fräscentrum ur zirkonia eller titan med mikrometerprecision.</p>
+      </div>
+      <div class="step" data-reveal data-d="1">
+        <p class="step__no">04</p><h3 class="step__t">Skiktning &amp; estetik</h3>
+        <p class="step__d">Porslinet skiktas för hand tills nyans, form och translucens stämmer mot leendet.</p>
+      </div>
+      <div class="step" data-reveal data-d="2">
+        <p class="step__no">05</p><h3 class="step__t">Kvalitetskontroll</h3>
+        <p class="step__d">Passform, ocklusion och estetik kontrolleras mot ordersedeln före leverans.</p>
+      </div>
+      <div class="step" data-reveal data-d="3">
+        <p class="step__no">06</p><h3 class="step__t">Säker leverans</h3>
+        <p class="step__d">Färdig restauration levereras tryggt och i tid, direkt till kliniken.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ====================== MATERIAL (dark vitrine) ====================== -->
+<section class="mat section">
+  <div class="shell">
+    <div class="mat__grid">
+      <div class="mat__copy">
+        <p class="kicker" data-reveal>Material &amp; teknik</p>
+        <h2 class="display h-sec" data-reveal data-d="1" style="margin-top:1.1rem">Modern teknik.<br>Tålmodigt handlag.</h2>
+        <p class="mat__txt" data-reveal data-d="2">
+          Laboratoriet kombinerar CAD/CAM och ett eget fräscentrum med traditionellt
+          skiktningshantverk. Alla produkter tillverkas i Sverige och kvalitetssäkras
+          före leverans till tandläkaren.
+        </p>
+        <div class="mat__chips" data-reveal data-d="3">
+          <span class="tag">Zirkonia</span><span class="tag">Fältspatsporslin</span>
+          <span class="tag">Glaskeramik</span><span class="tag">Titan</span>
+          <span class="tag">CoCr-skelett</span><span class="tag">CAD/CAM</span>
+        </div>
+      </div>
+
+      <figure class="mat__media" data-reveal data-d="2">
+        <img src="assets/images/veneers-macro.jpg" alt="Skiktade keramiska fasader i närbild">
+        <figcaption>Fältspatsfasader · individuell skiktning</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== GALLERY / VITRINE ====================== -->
+<section class="section" id="vitrin">
+  <div class="shell">
+    <div class="eyebrow-row">
+      <p class="kicker" data-reveal>Utvalda arbeten</p>
+      <h2 class="display h-sec" data-reveal data-d="1">Vitrinen.</h2>
+      <p class="lead" data-reveal data-d="2">Ett urval verkliga arbeten ur vårt laboratorium.</p>
+    </div>
+
+    <div class="vit__grid" id="vitGrid">
+      <figure class="vit__item" data-reveal data-d="1"><img src="assets/images/work-02.jpg" alt="Treledsbro i helkeram" loading="lazy"><figcaption class="vit__cap">Treledsbro · helkeram · A2</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="2"><img src="assets/images/work-03.jpg" alt="Fronttänder i fasad" loading="lazy"><figcaption class="vit__cap">Fronttänder · fasader · A1</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="3"><img src="assets/images/work-04.jpg" alt="Implantatbro i titan" loading="lazy"><figcaption class="vit__cap">Implantatbro · helkäke · titan</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="1"><img src="assets/images/work-06.jpg" alt="Delprotes med gjutet skelett" loading="lazy"><figcaption class="vit__cap">Delprotes · gjutet CoCr-skelett</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="2"><img src="assets/images/work-01.jpg" alt="Helkäke i fast protetik" loading="lazy"><figcaption class="vit__cap">Helkäke · fast protetik · zirkonia</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="3"><img src="assets/images/work-05.jpg" alt="Helprotes över- och underkäke" loading="lazy"><figcaption class="vit__cap">Helprotes · över- &amp; underkäke</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="1"><img src="assets/images/work-08.jpg" alt="Singelkrona i zirkonia" loading="lazy"><figcaption class="vit__cap">Singelkrona · zirkonia</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="2"><img src="assets/images/work-10.jpg" alt="Individuell implantatdistans" loading="lazy"><figcaption class="vit__cap">Implantatdistans · individuell</figcaption></figure>
+      <figure class="vit__item" data-reveal data-d="3"><img src="assets/images/work-07.jpg" alt="Helprotes med individuell uppställning" loading="lazy"><figcaption class="vit__cap">Helprotes · individuell uppställning</figcaption></figure>
+
+      <figure class="vit__item is-hidden"><img src="assets/images/work-11.jpg" alt="Bro med skiktad porslin" loading="lazy"><figcaption class="vit__cap">Bro · skiktad porslin</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-12.jpg" alt="Skelettprotes CoCr" loading="lazy"><figcaption class="vit__cap">Skelettprotes · CoCr</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-09.jpg" alt="Helprotes funktion och estetik" loading="lazy"><figcaption class="vit__cap">Helprotes · funktion &amp; estetik</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-15.jpg" alt="Krona modellpassning" loading="lazy"><figcaption class="vit__cap">Krona · modellpassning</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-16.jpg" alt="Bro i helkeram" loading="lazy"><figcaption class="vit__cap">Bro · helkeram</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-17.jpg" alt="Implantatmodell planering" loading="lazy"><figcaption class="vit__cap">Implantatmodell · planering</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-13.jpg" alt="Helprotes modellarbete" loading="lazy"><figcaption class="vit__cap">Helprotes · modellarbete</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-14.jpg" alt="Uppställning i artikulator" loading="lazy"><figcaption class="vit__cap">Uppställning · artikulator</figcaption></figure>
+      <figure class="vit__item is-hidden"><img src="assets/images/work-20.jpg" alt="Helprotes estetik" loading="lazy"><figcaption class="vit__cap">Helprotes · estetik</figcaption></figure>
+    </div>
+
+    <div class="vit__more">
+      <button class="btn btn--ghost" id="loadMore">Ladda fler arbeten <span class="arw">↓</span></button>
+      <a class="btn btn--light" href="https://www.instagram.com/tt914037" target="_blank" rel="noopener">Följ oss på Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== HERITAGE ====================== -->
+<section class="section" id="arv" style="background:var(--bone);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+  <div class="shell">
+    <div class="her__grid">
+      <figure class="her__media" data-reveal>
+        <img src="assets/images/ceramic-macro-bw.jpg" alt="Keramiskt arbete i närbild, svartvitt">
+      </figure>
+      <div class="her__txt">
+        <p class="kicker" data-reveal>Arv</p>
+        <h2 class="display h-sec" data-reveal data-d="1" style="margin:1.1rem 0 1.6rem">Tre generationer<br>vid samma bänk.</h2>
+        <p data-reveal data-d="2">Grundarna växte upp i yrket — familjens tre senaste generationer är tandtekniker.
+          Den långa erfarenheten optimerar varje moment och låter oss möta tandklinikens alla behov,
+          direkt från laboratoriet.</p>
+        <p data-reveal data-d="2">Vi värdesätter relationen mellan klinik och labb. Ett nära och effektivt samarbete
+          är grunden för lyckade behandlingar — och för leenden som håller.</p>
+        <blockquote class="pull" data-reveal data-d="3">Vi ställer upp med 100 % åtagande, utan ifrågasättning, i alla aspekter.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== REVIEWS ====================== -->
+<section class="section" aria-label="Omdömen">
+  <div class="shell">
+    <div class="eyebrow-row">
+      <p class="kicker" data-reveal>Omdömen</p>
+      <h2 class="display h-sec" data-reveal data-d="1">Tandläkare om oss.</h2>
+    </div>
+    <div class="rev__grid">
+      <blockquote class="rev" data-reveal data-d="1">
+        <p class="rev__q">Fantastisk service och otrolig kvalitet. Jag kände mig sedd och uppskattad genom hela processen — rekommenderar varmt till alla kollegor.</p>
+        <div class="rev__by"><div><div class="rev__name">Sara Lindström</div><div class="rev__role">Tandläkare</div></div><div class="rev__star">★★★★★</div></div>
+      </blockquote>
+      <blockquote class="rev" data-reveal data-d="2">
+        <p class="rev__q">Professionellt bemötande och blixtsnabb leverans. Det känns tryggt att samarbeta med ett så engagerat team.</p>
+        <div class="rev__by"><div><div class="rev__name">Emil Johansson</div><div class="rev__role">Tandläkare</div></div><div class="rev__star">★★★★★</div></div>
+      </blockquote>
+      <blockquote class="rev" data-reveal data-d="1">
+        <p class="rev__q">Otroligt fina resultat och en varm, personlig kontakt. Kunde inte vara mer nöjd med passform och estetik.</p>
+        <div class="rev__by"><div><div class="rev__name">Klara Svensson</div><div class="rev__role">Tandläkare</div></div><div class="rev__star">★★★★★</div></div>
+      </blockquote>
+      <blockquote class="rev" data-reveal data-d="2">
+        <p class="rev__q">Toppklass från start till mål. Tydlig kommunikation och fantastisk uppföljning — vi kommer tillbaka.</p>
+        <div class="rev__by"><div><div class="rev__name">Magnus Eriksson</div><div class="rev__role">Tandläkare</div></div><div class="rev__star">★★★★★</div></div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CERTIFICATION ====================== -->
+<section class="section" style="padding-top:0" aria-label="Kvalitet och efterlevnad">
+  <div class="shell">
+    <div class="eyebrow-row">
+      <p class="kicker" data-reveal>Kvalitet &amp; efterlevnad</p>
+      <h2 class="display h-sec" data-reveal data-d="1">Certifierat, registrerat,<br>spårbart.</h2>
+    </div>
+    <div class="cert__grid">
+      <div class="cert" data-reveal data-d="1">
+        <p class="cert__code">MDR (EU) 2017/745</p>
+        <h3 class="cert__t">Godkänd kvalitetssäkring</h3>
+        <p class="cert__d">All produktion följer EU:s förordning för medicintekniska produkter.</p>
+      </div>
+      <div class="cert" data-reveal data-d="2">
+        <p class="cert__code">LÄKEMEDELSVERKET</p>
+        <h3 class="cert__t">Registrerat laboratorium</h3>
+        <p class="cert__d">Tt tandtekniker är registrerat som tandtekniskt laboratorium i Sverige.</p>
+      </div>
+      <div class="cert" data-reveal data-d="3">
+        <p class="cert__code">CE · TILLVERKAT I SVERIGE</p>
+        <h3 class="cert__t">CE-märkta produkter</h3>
+        <p class="cert__d">Samtliga produkter är CE-märkta och tillverkade i vårt eget laboratorium.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTACT ====================== -->
+<section class="section" id="kontakt" style="background:var(--bone);border-top:1px solid var(--line-soft)">
+  <div class="shell">
+    <div class="con__grid">
+      <div class="con__info">
+        <p class="kicker" data-reveal>Kontakt</p>
+        <h2 class="display h-sec" data-reveal data-d="1" style="margin:1.1rem 0 0">Låt oss bygga nästa<br>leende tillsammans.</h2>
+
+        <div class="con__rows" data-reveal data-d="2">
+          <div class="con__row"><div class="con__k">Telefon</div>
+            <div class="con__v"><a href="tel:+46739711401" class="mono">+46 73 971 14 01</a><br><a href="tel:+46736752655" class="mono">+46 73 675 26 55</a></div></div>
+          <div class="con__row"><div class="con__k">E-post</div>
+            <div class="con__v"><a href="mailto:info@tt-tandtekniker.se">info@tt-tandtekniker.se</a></div></div>
+          <div class="con__row"><div class="con__k">Adress</div>
+            <div class="con__v">Krossgatan 25<br>162 50 Vällingby, Stockholm</div></div>
+          <div class="con__row"><div class="con__k">Öppettider</div>
+            <div class="con__v">Mån–Fre&nbsp;&nbsp;08:00–17:00<br><span class="con__k" style="text-transform:none">Lör &amp; Sön stängt</span></div></div>
+        </div>
+
+        <div class="con__extra" data-reveal data-d="3">
+          <a class="chip-link" href="assets/documents/arbetsorder.pdf" target="_blank" rel="noopener">⤓ Arbetsorder (PDF)</a>
+          <a class="chip-link" href="https://www.instagram.com/tt914037" target="_blank" rel="noopener">◎ Instagram</a>
+        </div>
+      </div>
+
+      <form class="form" id="contactForm" data-reveal data-d="2" novalidate>
+        <div class="form__row">
+          <div class="field"><label for="f-namn">Namn</label><input id="f-namn" name="namn" type="text" placeholder="För- och efternamn" required></div>
+          <div class="field"><label for="f-epost">E-post</label><input id="f-epost" name="epost" type="email" placeholder="namn@klinik.se" required></div>
+        </div>
+        <div class="field" style="margin-bottom:1rem"><label for="f-klinik">Klinik</label><input id="f-klinik" name="klinik" type="text" placeholder="Klinikens namn"></div>
+        <div class="field"><label for="f-medd">Meddelande</label><textarea id="f-medd" name="meddelande" placeholder="Berätta om ditt ärende — typ av arbete, tidsram och eventuella önskemål." required></textarea></div>
+        <div class="form__foot">
+          <p class="form__note">Vi svarar normalt inom en arbetsdag.<span class="form__ok" id="formOk">Tack! Din e-postklient öppnas — annars nå oss på info@tt-tandtekniker.se</span></p>
+          <button class="btn btn--primary" type="submit">Skicka förfrågan <span class="arw">→</span></button>
+        </div>
+      </form>
+    </div>
+
+    <div class="map" data-reveal>
+      <iframe title="Karta till Tt tandtekniker, Krossgatan 25, Vällingby"
+        src="https://maps.google.com/maps?q=Krossgatan%2025%2C%2016250%20V%C3%A4llingby&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <a class="brand" href="#top" aria-label="Tt tandtekniker">
+          <svg class="brand__mark" viewBox="0 0 64 72" fill="none" aria-hidden="true">
+            <path d="M32 6C20 6 10 10 9 22C8.4 30 9.5 38 12 48C13.4 54 15 66 19 66C23 66 24 54 26.5 47C28 43 30 42.5 32 42.5C34 42.5 36 43 37.5 47C40 54 41 66 45 66C49 66 50.6 54 52 48C54.5 38 55.6 30 55 22C54 10 44 6 32 6Z" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M18 17.5 H46" stroke="currentColor" stroke-width="4"/>
+            <path d="M18 14.6 V20.4 M46 14.6 V20.4" stroke="currentColor" stroke-width="2"/>
+            <path d="M32 19 V40" stroke="currentColor" stroke-width="4"/>
+            <path d="M27.5 40 H36.5" stroke="currentColor" stroke-width="2"/>
+            <path d="M51 11.5 L39 28" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="51" cy="11.5" r="2" fill="currentColor"/>
+          </svg>
+          <span class="brand__name"><b>Tt</b> tandtekniker<span class="brand__sub">Dentallaboratorium · Stockholm</span></span>
+        </a>
+        <p>Tandtekniskt laboratorium specialiserat på estetik. Tre generationers hantverk — tillverkat i Sverige.</p>
+      </div>
+
+      <div class="foot__col">
+        <h4>Sidan</h4>
+        <a href="#tjanster">Tjänster</a>
+        <a href="#hantverk">Hantverket</a>
+        <a href="#vitrin">Galleri</a>
+        <a href="#arv">Om oss</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <div class="foot__col">
+        <h4>Kontakt</h4>
+        <a href="tel:+46739711401">+46 73 971 14 01</a>
+        <a href="mailto:info@tt-tandtekniker.se">info@tt-tandtekniker.se</a>
+        <p>Krossgatan 25<br>162 50 Vällingby</p>
+        <a href="assets/documents/arbetsorder.pdf" target="_blank" rel="noopener">Arbetsorder (PDF)</a>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <p>© 2025 Tt tandtekniker. Alla rättigheter förbehållna.</p>
+      <span>MDR (EU) 2017/745 · Tillverkat i Sverige</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-  // Lista över bilder som ska roteras varannan sekund
-  const images = [
-    "assets/images/technician-hands-bw.jpg",
-    "assets/images/WhatsApp Image 2025-05-24 at 11.36.52_4dd4807d.jpg",
-    "assets/images/WhatsApp Image 2025-05-24 at 11.36.52_9fc6fd5e.jpg",
-    "assets/images/WhatsApp Image 2025-05-24 at 11.36.52_1343890f.jpg"
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- nav scrolled state ---- */
+  var nav = document.getElementById("nav");
+  var onScroll = function(){ nav.classList.toggle("scrolled", window.scrollY > 24); };
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---- mobile menu ---- */
+  var burger = document.getElementById("burger");
+  var drawer = document.getElementById("drawer");
+  function setMenu(open){
+    document.body.classList.toggle("menu-open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Stäng meny" : "Öppna meny");
+  }
+  burger.addEventListener("click", function(){ setMenu(!document.body.classList.contains("menu-open")); });
+  drawer.addEventListener("click", function(e){ if(e.target.tagName === "A") setMenu(false); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMenu(false); });
+
+  /* ---- VITA shade strip (signature) ---- */
+  var shades = [
+    {n:"B1", c:["#F4EEDD","#E9DEC4"]},
+    {n:"A1", c:["#F1E9D4","#E4D7BB"]},
+    {n:"B2", c:["#EFE4C8","#DDCBA9"]},
+    {n:"A2", c:["#EADDBE","#D7C6A2"]},
+    {n:"A3", c:["#E5D4AD","#CDB78E"]},
+    {n:"D3", c:["#E0D0AE","#C7B596"]},
+    {n:"A3.5", c:["#DCCAA0","#C2AC7F"]},
+    {n:"C2", c:["#DDD0B4","#C4B79B"]},
+    {n:"A4", c:["#D6C293","#B89E70"]}
   ];
+  var strip = document.getElementById("shadeStrip");
+  if(strip){
+    shades.forEach(function(s, i){
+      var tab = document.createElement("div");
+      tab.className = "tab" + (s.n === "A2" ? " is-on" : "");
+      tab.innerHTML =
+        '<div class="tab__chip" style="background:linear-gradient(178deg,'+s.c[0]+' 0%,'+s.c[0]+' 30%,'+s.c[1]+' 100%)"></div>'+
+        '<div class="tab__label">'+s.n+'</div>';
+      tab.addEventListener("mouseenter", function(){
+        strip.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("is-on"); });
+        tab.classList.add("is-on");
+      });
+      strip.appendChild(tab);
+    });
+  }
 
-  let currentIndex = 0;
-  const rotatingImg = document.getElementById("rotatingImage");
+  /* ---- reveal on scroll ---- */
+  var items = document.querySelectorAll("[data-reveal]");
+  if(reduce || !("IntersectionObserver" in window)){
+    items.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    items.forEach(function(el){ io.observe(el); });
+  }
 
-  setInterval(() => {
-    // Öka index, och om vi når slutet, börja om från början
-    currentIndex = (currentIndex + 1) % images.length;
-    rotatingImg.src = images[currentIndex];
-  }, 2000); // 2000 millisekunder = 2 sekunder
+  /* ---- gallery load more ---- */
+  var loadMore = document.getElementById("loadMore");
+  if(loadMore){
+    loadMore.addEventListener("click", function(){
+      document.querySelectorAll("#vitGrid .is-hidden").forEach(function(el){ el.classList.remove("is-hidden"); });
+      loadMore.style.display = "none";
+    });
+  }
+
+  /* ---- contact form → mailto (static-site friendly) ---- */
+  var form = document.getElementById("contactForm");
+  if(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      var d = new FormData(form);
+      var subject = "Förfrågan från " + (d.get("klinik") || d.get("namn") || "webbplatsen");
+      var body = "Namn: " + d.get("namn") + "\nE-post: " + d.get("epost") +
+                 "\nKlinik: " + (d.get("klinik")||"-") + "\n\n" + d.get("meddelande");
+      form.classList.add("sent");
+      window.location.href = "mailto:info@tt-tandtekniker.se?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  }
+})();
 </script>
-
-
-  <!-- ====== GALLERI SECTION ====== -->
-  <section id="gallery" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-    <div class="container">
-      <h2 class="section-heading mb-4">Galleri</h2>
-      <div class="row g-3 gallery-row">
-        <div class="col-6 col-md-3 position-relative" data-aos="fade-up" data-aos-delay="300">
-          <video autoplay loop muted playsinline class="img-fluid rounded shadow-sm">
-            <source src="assets/images/teeth 1.mp4" type="video/mp4">
-          </video>
-          <span class="video-overlay"><i class="bi bi-play-fill"></i></span>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <button id="load-more" class="btn btn-outline-light btn-sm me-2">Ladda mer</button>
-        <a href="https://www.instagram.com/tt914037?igsh=anZnOWg1bG5yNm9n" class="btn btn-gold btn-sm">
-          <i class="bi bi-instagram me-1"></i>Följ oss på Instagram
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== REVIEWS SECTION ====== -->
-  <section id="reviews" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-    <div class="container">
-      <h2 class="section-heading text-center mb-4">Reviews</h2>
-      <div class="reviews-list">
-        <div class="review-item mb-5">
-          <h5 class="reviewer-name">Sara Lindström</h5>
-          <p class="review-stars">★★★★★</p>
-          <p class="review-text">Fantastisk service och otrolig kvalitet! Jag kände mig sedd och uppskattad genom hela processen. Rekommenderar varmt till alla kollegor.</p>
-          <div class="review-source"><i class="bi bi-google"></i></div>
-        </div>
-        <hr class="border-secondary">
-        <div class="review-item my-5">
-          <h5 class="reviewer-name">Emil Johansson</h5>
-          <p class="review-stars">★★★★★</p>
-          <p class="review-text">Professionellt bemötande och blixtsnabb leverans. Känns tryggt att samarbeta med ett så engagerat team!</p>
-          <div class="review-source"><i class="bi bi-google"></i></div>
-        </div>
-        <hr class="border-secondary">
-        <div class="review-item my-5">
-          <h5 class="reviewer-name">Klara Svensson</h5>
-          <p class="review-stars">★★★★★</p>
-          <p class="review-text">Otroligt fina resultat och en varm, personlig kontakt. Kunde inte vara mer nöjd med mitt leende!</p>
-          <div class="review-source"><i class="bi bi-google"></i></div>
-        </div>
-        <hr class="border-secondary">
-        <div class="review-item mt-5 mb-0">
-          <h5 class="reviewer-name">Magnus Eriksson</h5>
-          <p class="review-stars">★★★★★</p>
-          <p class="review-text">Toppklass från start till mål! Tydlig kommunikation och fantastisk uppföljning. Kommer tillbaka igen!</p>
-          <div class="review-source"><i class="bi bi-google"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== VISIT US SECTION ====== -->
-  <section id="visit-us" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-    <div class="container text-center">
-      <h2 class="section-heading mb-5">Välkomna att besöka oss</h2>
-      <div class="visit-group mb-5" data-aos="fade-up" data-aos-delay="100">
-        <h5 class="visit-title">KONTAKT</h5>
-        <p class="visit-text mb-1">+46 73 971 14 01</p>
-        <p class="visit-text mb-1">+46 73 675 26 55</p>
-        <p class="visit-text">info@tt-tandtekniker.se</p>
-      </div>
-      <hr class="visit-divider">
-      <div class="visit-group my-5" data-aos="fade-up" data-aos-delay="200">
-        <h5 class="visit-title">ADRESS</h5>
-        <p class="visit-text">Krossgatan 25, 162 50 Vällingby</p>
-      </div>
-      <hr class="visit-divider">
-      <div class="visit-group mt-5" data-aos="fade-up" data-aos-delay="300">
-        <h5 class="visit-title">ÖPPETTIDER</h5>
-        <p class="visit-text mb-1">Mån – Fre: 08:00 – 17:00</p>
-        <p class="visit-text">Lör & Sön: Stängt</p>
-      </div>
-    </div>
-  </section>
-<!-- ====== KONTAKT SECTION ====== -->
-<style>
-  /* تغميق نص الإدخالات والنص البديل (placeholder) في نموذج الاتصال */
-  .contact-form .form-control {
-    color: #f8f9fa;            /* نص أبيض فاتح ليكون واضحًا على الخلفية الداكنة */
-    background-color: #343a40; /* نفس لون الخلفية الداكنة لمطابقة التصميم */
-    border: 1px solid #495057; /* جعل حدود الإدخال أوضح */
-  }
-  .contact-form .form-control::placeholder {
-    color: #ced4da;            /* لون رمادي فاتح للـ placeholder، مع تباين أفضل */
-    opacity: 1;                /* ظهور النص البديل بقوة */
-  }
-  .contact-form .form-control:focus {
-    background-color: #495057; /* تغيير خلفية الإدخال عند التركيز لجعلها مميزة */
-    border-color: #adb5bd;     /* توضيح الحد عند التركيز */
-    color: #ffffff;            /* التأكد من بقاء النص أبيض عند التركيز */
-  }
-  .contact-form .btn-outline-light {
-    border-color: #ced4da;
-    color: #ced4da;
-  }
-  .contact-form .btn-outline-light:hover {
-    background-color: #ced4da;
-    color: #343a40;
-  }
-</style>
-
-<section id="contact" class="py-5 bg-dark text-light" data-aos="fade-up" data-aos-duration="800">
-  <div class="container">
-    <div class="row align-items-start">
-      <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="section-heading">Kontakta Oss</h2>
-        <p class="contact-intro">Kontakta oss gärna om du har några frågor! Vi försöker alltid svara så snabbt vi kan.</p>
-        <div class="social-icons mb-4">
-          <a href="https://www.instagram.com/tt914037?igsh=anZnOWg1bG5yNm9n"><i class="bi bi-instagram"></i></a>
-        </div>
-        <div class="contact-actions d-flex">
-          <!-- Arbetsorder: عند الضغط على هذا الرابط يفتح ملف PDF -->
-          <div class="me-4 text-center">
-            <a href="assets/ordersedelMaj2024.pdf" target="_blank" class="text-light text-decoration-none">
-              <i class="bi bi-file-earmark-text contact-icon"></i>
-              <p class="action-label">Arbetsorder</p>
-            </a>
-          </div>
-          <div class="text-center">
-            <i class="bi bi-envelope contact-icon"></i>
-            <p class="action-label">Svarspost</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-        <form class="contact-form p-4 rounded shadow-sm">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Namn:"
-                required
-              >
-            </div>
-            <div class="col-md-6">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="E-post:"
-                required
-              >
-            </div>
-            <div class="col-12">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Klinikens namn:"
-              >
-            </div>
-            <div class="col-12">
-              <textarea
-                class="form-control"
-                rows="5"
-                placeholder="Meddelande:"
-                required
-              ></textarea>
-            </div>
-            <div class="col-12 text-end">
-              <button type="submit" class="btn btn-outline-light">Skicka</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
- <!-- ====== MAP SECTION ====== -->
-<section id="map" class="mb-5">
-  <div class="container-fluid p-0">
-    <iframe
-      src="https://maps.google.com/maps?q=Krossgatan%2025%2C%2016250%20V%C3%A4llingby&output=embed"
-      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-
-  <!-- ====== FOOTER ====== -->
-  <footer class="py-4 bg-dark text-center text-light">
-    <div class="container">
-      <p class="mb-0">© 2025 Tt tandtekniker. Alla rättigheter förbehållna.</p>
-    </div>
-  </footer>
-
-  <!-- AOS & Bootstrap JS -->  
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ once: true }); </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-<script src="js/script.js" defer></script>
-
 </body>
 </html>
